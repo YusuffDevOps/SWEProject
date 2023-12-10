@@ -1,0 +1,42 @@
+img {
+  width: 300px;
+  height: 285px;
+  border-radius: 15px;
+}
+
+p {
+  color: black;
+}
+
+
+
+.m-15 {
+  margin: 15px;
+  display: block;
+}
+
+.holder {
+  display: inline-block;
+}
+
+
+.image-desc{
+  display: inline;
+}
+
+.button-form{
+  display: inline;
+}
+
+.container {
+  text-align: center;
+}
+
+.img-title {
+  text-align: left;
+}
+
+.col-sm {
+  display: inline;
+  margin-right: 35px;
+}

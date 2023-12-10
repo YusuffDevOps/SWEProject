@@ -1,0 +1,61 @@
+<!-- 
+    Define the markup of the new species page within the admin fodler
+
+    Author: Agowun Muhammad Altaf (A00448118)
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="UTF-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>Edit Specie</title>
+         <!-- jQuery library for DOM manipulation -->
+         <script
+             src="https://code.jquery.com/jquery-3.6.1.min.js"
+             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+             crossorigin="anonymous"
+         ></script>
+         <script src="/script/newSpecies.js" defer></script>
+         <link rel="stylesheet" href="/css/newSpecies.css" />
+         
+     </head>
+     <body>
+         <div id="form">
+            <form action="/edit/image/<%=image._id%>" method="post" >
+             <!-- populated with the images of the specie to be uploaded -->
+             <img class="queueimg" src="data:image/<%=image.imageType%>;base64,
+             <%=image.image.toString('base64')%>" />
+
+             <label for="category"
+             >Category:
+             <select name="category" id="category">
+                 <option value="<%=image.category%>"><%=image.category%></option>
+                 <% if(image.category == "flora"){ %>
+                 <option value="fauna">Fauna</option>
+                 <% } else{ %>
+                 <option value="flora">Flora</option>
+                 <% }%>
+             </select>
+         </label>
+ 
+             <label for="name">Title: <input name="title" id="name" type="text" value="<%=image.title%>"/></label>
+             <label for="usermail">Email: <input disabled name="email"  value = "<%=image.userEmail%>" id="usermail" type="email" /></label>
+             <label for="description"
+                 >Description:
+                 <textarea
+                     name="desc"
+                     id="description"
+                     cols="80"
+                     rows="10"
+                 ><%=image.desc%></textarea>
+             </label>
+ 
+             <button id="upload" type="submit">Edit</button>
+            </form>
+             <!-- populated with the progression of uploading the images -->
+             <div id="progress"></div>
+         </div>
+     </body>
+ </html>
+ 

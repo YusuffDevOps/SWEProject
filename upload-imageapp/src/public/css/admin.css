@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+}
+
+input {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.btn {
+  width: 181px;
+}
+
+.accept-btn {
+  display: inline;
+}
+
+.logout-form {
+  padding: 20px;
+}
+
+.login-form{
+  padding : 100px
+}
+
+
+
+.btn {
+  margin: 20px;
+}
+
+.queueimg {
+  width: 300px;
+  height: 285px;
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+}

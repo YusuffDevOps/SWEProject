@@ -1,0 +1,69 @@
+<!-- 
+    Define the markup of the new species page within the admin fodler
+
+    Author: Agowun Muhammad Altaf (A00448118)
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="UTF-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>Add new Species</title>
+         <!-- jQuery library for DOM manipulation -->
+         <script
+             src="https://code.jquery.com/jquery-3.6.1.min.js"
+             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+             crossorigin="anonymous"
+         ></script>
+         <script src="/script/newSpecies.js" defer></script>
+         <link rel="stylesheet" href="/css/newSpecies.css" />
+     </head>
+     <body>
+         <div id="form">
+             <!-- populated with the images of the specie to be uploaded -->
+             <div class="preview"></div>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+             <label for="imageInput" id="imageInputLabel"
+                 >Add Images
+ 
+                 <!-- hidden file input to upload images -->
+                 <input
+                     hidden
+                     type="file"
+                     name="image-file"
+                     id="imageInput"
+                     accept="image/*"
+                     multiple
+                 />
+             </label>
+
+             <label for="category"
+             >Category:
+             <select name="category" id="category">
+                 <option value="unselected">Select Category</option>
+                 <option value="fauna">Fauna</option>
+                 <option value="flora">Flora</option>
+             </select>
+         </label>
+ 
+             <label for="name">Title: <input name="title" id="name" type="text" /></label>
+             <label for="usermail">Email: <input name="email" id="usermail" type="email" /></label>
+             <label for="description"
+                 >Description:
+                 <textarea
+                     name="desc"
+                     id="description"
+                     cols="80"
+                     rows="10"
+                 ></textarea>
+             </label>
+ 
+             <button id="upload" type="submit">Upload</button>
+            </form>
+             <!-- populated with the progression of uploading the images -->
+             <div id="progress"></div>
+         </div>
+     </body>
+ </html>
+ 
