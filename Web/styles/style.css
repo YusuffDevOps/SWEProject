@@ -1,0 +1,98 @@
+
+/* Basic styling for the HTML body */
+html, body {
+    height: 100%; /* Full height */
+    margin: 0; /* No margin */
+    font-family: 'å¾®è½¯é›…é»‘', Arial, sans-serif; /* Font family */
+    background-color: #f0f8ff; /* Light blue background color */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center align text */
+}
+
+/* Styling for the main container */
+.main-container {
+    display: flex; /* Flexbox display */
+    flex-direction: column; /* Column layout */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding around the container */
+    background-color: #fff; /* White background color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Styling for the main heading */
+h1 {
+    font-size: 4rem; /* Large font size */
+    color: #333; /* Dark text color */
+    margin-bottom: 50px; /* Space below the heading */
+}
+
+/* Container for links */
+.link-container {
+    display: flex; /* Flexbox display */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+}
+
+/* Styling for individual links */
+.link {
+    width: 60%; /* Width of link elements */
+    margin: 20px 0; /* Margin around each link */
+    padding: 40px 20px; /* Padding inside each link */
+    border-radius: 20px; /* Rounded corners */
+    text-decoration: none; /* No underline on text */
+    color: #333; /* Dark text color */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-size: 2rem; /* Large font size */
+    transition: transform 0.3s; /* Smooth scaling effect on hover */
+}
+
+/* Styling for images in links */
+.link img {
+    width: 120px; /* Width of images */
+    height: auto; /* Automatic height for proper aspect ratio */
+    margin-bottom: 20px; /* Space below images */
+}
+
+/* Styling for text in links */
+.link span {
+    display: block; /* Block display for text */
+}
+
+/* Background color for child-themed links */
+.link-child {
+    background-color: #add8e6; /* Light blue background */
+}
+
+/* Background color for adult-themed links */
+.link-adult {
+    background-color: #ffdead; /* Light beige background */
+}
+
+/* Hover effect for links */
+.link:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
+}
+
+/* Styling for the footer */
+footer {
+    padding: 20px 0; /* Padding for the footer */
+    background-color: #333; /* Dark background color for the footer */
+    color: #fff; /* Light text color for contrast */
+    text-align: center; /* Center align text */
+    position: absolute; /* Position the footer at the bottom */
+    bottom: 0; /* Align to the bottom of the page */
+    width: 100%; /* Full width */
+}
+
+/* Styling for text inside the footer */
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 1rem; /* Set font size */
+}
+
+/* if need to change anything, ask Liwei*/

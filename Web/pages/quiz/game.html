@@ -1,0 +1,324 @@
+<!--
+  Purpose: This file provides a basis for the 'kids' quiz page with one simple quiz, allowing future          programmers to easily add more quizzes and improve child interaction through CSS style 
+  Consists embedded styling to provide styles in addition to those provided by the external css file
+  Authors / Work Done: 
+	(past group)
+  Rahabar Mahmud - common menu section, pop up- styling, structure, functionality
+  Toufiq Abir Farhan Tufan - Styling, structure, content, functionality of the rest of the sections
+	
+	Zoe Levings - Cleaned up a lot of unusable code from before, reformatted. Implemented some reusable pages for future quizzes. Created one quiz as an example for how the quiz page can run. Implemented home page(s) for quiz page to be stylized in the future.
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="UTF-8" />
+	    
+   	 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--Links to fonts for css-->
+    	<link rel="preconnect" href="https://fonts.gstatic.com" />
+    	<link href="https://fonts.google.com/specimen/Inter" />
+
+    	<!--Linking the thrid party css  custom font libraries from the web-->
+    	<link rel="stylesheet" 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    	<!--Linking the css files -->
+    	<link rel="stylesheet" href="../../styles/body.css" />
+    	<link rel="stylesheet" href="../../styles/nav.css" />
+    	<link rel="stylesheet" href="../../styles/header.css" />
+    	<link rel="stylesheet" href="../../styles/footer.css" />
+    	<link rel="stylesheet" href="../../styles/index.css" />
+    	<link rel="stylesheet" href="../../styles/estore.css" />
+    	
+	    <!--Linking a custom font-->
+	    <link
+	      rel="stylesheet"
+	      href="path/to/font-awesome/css/font-awesome.min.css"
+	    />
+	    <link
+	      rel="stylesheet"
+	      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	    />
+	    <link
+	      rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	    />
+
+	    <!--Linking the javascript files for functionality-->
+	    <script defer src="../../scripts/estore.js"></script>
+
+    	<!--Linking the javascript file for functionality of the quiz-->
+    	<script src="./../../scripts/carousel.js"></script>
+		
+		<!--Linking to javascript file for quiz1-->
+		<script src="../../scripts/game1.js" async></script>
+
+    	<style>
+    		.modal a.close-modal {
+        		display: none;
+    		}
+    		.nar-bar a {
+        		font-size:14px;
+    		}
+    	</style>
+
+    	<title>St. Margeret's Bay Woodland Conservation</title>
+	</head>
+
+	<header>
+    	<!--Menu section constituting the head of the game page for navigation-->
+
+    	<div class="header-container" style="height: 100px">
+        	<div class="org-name">
+            	<a class="org-logo" href="../../index.html">
+           		 <p><a href="../../index.html">French Village Forest <b>Conservation</b></a></p>
+       	  	</div>
+        	<div class="menu-btn">
+            	<div class="menu-btn_burger"></div>
+            	<div id="nav-bar" class="nav-bar">
+                	<nav>
+                    	<ul>
+                        	<li><a href="../../pages/about/about.html">About</a></li>
+                       	 	<li><a href="../../pages/ecosystem/ecosystem.html">Ecosystem</a></li>
+                        	<li><a href="../../pages/burial/burial.html">Burial</a></li>
+                        	<li><a href="../../pages/quiz/game.php">Quiz</a></li>
+                        	<li><a href="../../pages/e-commerce/estore.html">Marketplace</a></li>
+                        	<li><a href="../../pages/newmap/client/index.html">Map</a></li>
+                       	 	<li><a href="../../pages/newmap/client/conservation.html">Gallery</a></li>
+                        	<li><a href="../../pages/newmap/admin/index.html">Photo Upload</a></li>
+                    	</ul>
+                	</nav>
+            	</div>
+        	</div>
+    	</div>
+	</header>
+		<!-- main content section - the game body.
+     	   The body tag calls the function that set's up the game as a screen of questions displayed one at 			a time to the user-->
+	
+	<body>
+    		<!-- Current date and time display from the server as a content of the html -->
+    
+
+    	<div class="main-content">
+        	<main>
+				<br><br><br><br><br>
+            	<div>
+                	
+					<!--Establishes main page of the quizzes-->
+                	<article id = "quizMainPageId">
+	                	<h3 style="color:black">Quizzes</h3>
+
+                    	<p style="color:black">
+                        	Are you ready for a challenge? Step right up! See how much you know about 							French Village Forest Conservation!
+                    	</p>
+						<input id = "nameInputId" type = "text" placeholder = "Player Name">
+						<button id = "quizNameButtonId" style ="color:black;border: 2px solid #04AA6D">
+							Let's Go!
+						</button>
+                	</article>
+				
+					<!--Establishes right and wrong answer pages for games-->
+					<article id = "rightAnswerId" style ="display:none">
+						<p style = "color:black"> 
+							That's correct! <br>
+							Proceed to the next question
+						</p>
+					</article>
+				
+					<article id = "wrongAnswerId" style ="display:none">
+						<p style = "color:black"> 
+							That's incorrect <br>
+							Proceed to the next question
+						</p>
+					</article>
+				
+					<!--Establishes list of quizzes-->
+					<article id = "loadupPageId" style="display:none">
+						<br>
+						<br>
+	                	<h3 style="color:black">
+	                   	 	Quizzes
+	                	</h3>
+						<p style ="color:black">
+							Welcome
+							<span id = "nameSpanId"></span>
+							! Select a quiz below to begin your challenge!
+						</p>
+						<h4>Flora or Fauna?</h4>
+						
+					</article>
+				
+					<!--First question of quiz 1 -->
+					<article id = "quiz1Q1Id" style="display:none">
+						<br>
+						<br>
+						<h3>Flora or Fauna?</h3>
+						<h5>Is this image an example of flora or fauna?</h5>
+		            	<div class="flip-card">
+		              	  	<div class="flip-card-inner">
+		               	  		<div class="flip-card-goosefront"></div>
+		                	  	<div class="flip-card-back">
+		                  			<h1 class="main-container">Canada Goose</h1>
+		                		</div>
+							</div>
+		              	</div>
+						<br>
+					</article>
+				
+					<!--Second question of quiz 1 -->
+					<article id = "quiz1Q2Id" style="display:none">
+						<br>
+						<br>
+						<h3>Flora or Fauna?</h3>
+						<h5>Is this image an example of flora or fauna?</h5>
+			          	<div class="flip-card">
+			            	<div class="flip-card-inner">
+			              		<div class="flip-card-pearfront"></div>
+			              	    <div class="flip-card-back">
+			                		<h1 class="main-container">Pear Trees<br /></h1>
+			              	  	</div>
+			            	</div>
+						</div>
+						<br>
+					</article>
+
+					<!--Third question of quiz 1 -->
+					<article id = "quiz1Q3Id" style="display:none">
+						<br>
+						<br>
+						<h3>Flora or Fauna?</h3>
+						<h5>Is this image an example of flora or fauna?</h5>
+		            	<div class="flip-card">
+		              	  	<div class="flip-card-inner">
+		                		<div class="flip-card-birchfront"></div>
+		                		<div class="flip-card-back">
+		                  		  	<h1 class="main-container">
+		                    			Coastal Yellow<br />
+		                    			Birch
+		                  		  	</h1>
+		                		</div>
+		              	  	</div>
+						</div>
+						<br>
+					</article>
+
+					<!--Fourth question of quiz 1 -->
+					<article id = "quiz1Q4Id" style="display:none">
+						<br>
+						<br>
+						<h3>Flora or Fauna?</h3>
+						<h5>Is this image an example of flora or fauna?</h5>
+			          	<div class="flip-card">
+			            	<div class="flip-card-inner">
+			              	  	<div class="flip-card-salamanderfront"></div>
+			              	  	<div class="flip-card-back">
+			                		<h1 class="main-container">
+			                  		  Eastern<br />Red-backed<br />
+			                  		  Salamander
+			                	  	</h1>
+			              	  	</div>
+			            	</div>
+			          	</div>
+						<br>
+					</article>
+				
+					<!--Fifth question of quiz 1 -->
+					<article id = "quiz1Q5Id" style="display:none">
+						<br>
+						<br>
+						<h3>Flora or Fauna?</h3>
+						<h5>Is this image an example of flora or fauna?</h5>
+		            	<div class="flip-card">
+		              	  	<div class="flip-card-inner">
+		                		<div class="flip-card-applefront"></div>
+		                		<div class="flip-card-back">
+		                  		  	<h1 class="main-container">Apple Trees<br /></h1>
+		                		</div>
+		              	  	</div>
+		            	</div>
+						<br>
+					</article>
+					
+					<!--Button takes player to next question -->
+					<button id="q1NextQButtonId" 
+						style = "color:black;border: 2px solid #04AA6D;display:none"> 
+						Let's Go! 
+					</button>
+					
+					<button id = "q1FlButtonId" 
+						style ="color:black;border:2px solid black;display:none">
+						Flora
+					</button>
+					<button id = "q1FaButtonId" 
+						style ="color:black;border:2px solid black;display:none">
+						Fauna
+					</button>
+				
+					<!--Establishes final results pages-->
+					<article id = "quiz1ResultsRightId" style="display:none">
+						<p style ="color:black">
+							That's correct! <br>
+						</p>
+					</article>
+				
+					<article id = "quiz1ResultsWrongId" style="display:none">
+						<p style ="color:black">
+							That's incorrect <br>
+						</p>
+					</article>
+					
+					<!--Button takes player to results page -->
+                	<button id="quiz1SeeResults" style = "color:black;display:none"> See Results! </button>
+				
+					<!--Results page, tallied as player takes quiz-->
+					<article id = "quiz1ResultsId" style="display:none">
+						<h3>Results</h3>
+						<p style = "color:black">
+							You got <span id = "quiz1ResultFill"></span>/5 correct!
+						</p>
+					</article>
+                
+            	</div>
+
+        	</main>
+			
+        	<footer class="section-p1" style="display:flex; justify-content: space-between;">
+            	<div class="col" style="width:25%">
+                	<h4>Contact Us</h4>
+                	<p>
+                    	<strong>Address:</strong> 71 St Pauls Ln, French Village, NS B3Z 4E3
+                	</p>
+                	<p><strong>Phone:</strong> 111 222 333/ (+1) 444 555 666</p>
+                	<p><strong>Hours:</strong> 10:00 - 16:00; Mon - Sat</p>
+            	</div>
+
+            	<div class="col" style="width:25%">
+                	<h4>Useful Links</h4>
+                	<a href="#">Quiz</a>
+                	<a href="#">Sign-in</a>
+                	<a href="#">MarketPlace</a>
+                	<a href="#">Map</a>
+           	 	</div>
+
+            	<div class="col" style="width:25%">
+                	<div class="follow">
+                    	<h4>Follow us</h4>
+                    	<div class="icon">
+                        	<i class="fab fa-facebook-f"></i>
+                        	<i class="fab fa-twitter"></i>
+                        	<i class="fab fa-instagram"></i>
+                        	<i class="fab fa-pinterest-p"></i>
+                        	<i class="fab fa-linkedin"></i>
+                    	</div>
+                	</div>
+            	</div>
+
+            	<div class="copyright">
+                	<p>Ⓒ SMU Software Engineering Group F</p>
+            	</div>
+        	</footer>
+
+    	</div>
+	</body>
+</html>
